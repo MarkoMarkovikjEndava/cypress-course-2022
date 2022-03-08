@@ -1,0 +1,207 @@
+[
+  {
+    "description": "    End to end testing for course purposes.",
+    "keyword": "Feature",
+    "name": "Eshop capabilities",
+    "line": 1,
+    "id": "eshop-capabilities",
+    "tags": [],
+    "uri": "eshop.feature",
+    "elements": [
+      {
+        "id": "eshop-capabilities;eshop-product-order-validation",
+        "keyword": "Scenario",
+        "line": 6,
+        "name": "Eshop product order validation",
+        "tags": [
+          {
+            "name": "@Regression",
+            "line": 5
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the user is on the shopping page",
+            "result": {
+              "status": "passed",
+              "duration": 3425000000
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "productName",
+                      "price"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Blackberry",
+                      "50000"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "iphone X",
+                      "100000"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "When ",
+            "line": 8,
+            "name": "the user adds a product",
+            "result": {
+              "status": "passed",
+              "duration": 1243000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "the user goes to checkout",
+            "result": {
+              "status": "passed",
+              "duration": 289000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "the user fills in their info",
+            "result": {
+              "status": "passed",
+              "duration": 5633000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 14,
+            "name": "the user receives a confirmational dialog message",
+            "result": {
+              "status": "passed",
+              "duration": 51000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "eshop-capabilities;eshop-input-fields-validation",
+        "keyword": "Scenario",
+        "line": 17,
+        "name": "Eshop input fields validation",
+        "tags": [
+          {
+            "name": "@Smoke",
+            "line": 16
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 18,
+            "name": "the user is on the home page",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 19,
+            "name": "the user fills in the required inputs successfully",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "the user clicks submit",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 21,
+            "name": "the user receives a confirmational alert dialog",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "eshop-capabilities;eshop-multiple-products-order-validation",
+        "keyword": "Scenario",
+        "line": 24,
+        "name": "Eshop multiple products order validation",
+        "tags": [
+          {
+            "name": "@Regression",
+            "line": 23
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 25,
+            "name": "the user is on the shopping page",
+            "result": {
+              "status": "passed",
+              "duration": 2026000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 26,
+            "name": "the user has added multiple products",
+            "result": {
+              "status": "passed",
+              "duration": 2059000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 27,
+            "name": "the user goes to products checkout",
+            "result": {
+              "status": "passed",
+              "duration": 212000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 28,
+            "name": "the price is calculated correctly",
+            "result": {
+              "status": "passed",
+              "duration": 57000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

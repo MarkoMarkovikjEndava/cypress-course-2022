@@ -1,0 +1,23 @@
+{
+  "name": "Marko Markovikj",
+  "email": "marko.markovikj@test.com",
+  "gender": "Male",
+  "products": [
+    {
+      "name": "iphone X",
+      "price": 100000
+    },
+    {
+      "name": "Samsung Note 8",
+      "price": 85000
+    },
+    {
+      "name": "Nokia Edge",
+      "price": 65000
+    },
+    {
+      "name": "Blackberry",
+      "price": 50000
+    }
+  ]
+}

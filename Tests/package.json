@@ -1,0 +1,38 @@
+{
+  "name": "intro",
+  "version": "1.0.0",
+  "description": "first cypress project",
+  "main": "index.js",
+  "scripts": {
+    "start:cypress": "node_modules/cypress/bin cypress open",
+    "start:tests": "cypress run",
+    "start:tests-head": "npm run start:tests -- --headed",
+    "start:tests-chrome": "npm run start:tests-head -- --browser chrome",
+    "record:dashboard": "npm run start:tests -- --record --key 93bc32f0-f135-4e96-bf27-8b270583ef2e",
+    "start:web-controls": "npm run start:tests -- --spec \"cypress/integration/course-tests/web-controls.js\"",
+    "start:cucumberTests": "npm run start:tests -- --spec \"cypress/integration/**/*.feature\" --headed",
+    "start:cucumberRegression": "cypress-tags run -e TAGS=\"@Regression\" --headed",
+    "start:cucumberSmoke": "cypress-tags run -e TAGS=\"@Smoke\" --headed"
+  },
+  "author": "Marko Markovikj",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^9.5.0",
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "cypress-iframe": "^1.0.1",
+    "mocha": "^9.2.1",
+    "mochawesome": "^7.0.1"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/cucumber-json",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber"
+    }
+  },
+  "dependencies": {
+    "multiple-cucumber-html-reporter": "^1.19.0"
+  }
+}

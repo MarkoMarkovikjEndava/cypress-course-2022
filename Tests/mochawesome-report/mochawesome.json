@@ -1,0 +1,138 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-02-25T16:08:43.718Z",
+    "end": "2022-02-25T16:08:52.539Z",
+    "duration": 8821,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "52ef31ad-af0d-4214-a12c-2b5d1a7f3ac5",
+      "title": "",
+      "fullFile": "cypress/integration/course-tests/mocking-requests.js",
+      "file": "cypress/integration/course-tests/mocking-requests.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5a5afa5f-aefd-47ad-a4b0-f6e29eabc927",
+          "title": "working with & intercepting http requests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "asserts page layout after intercepting the request",
+              "fullTitle": "working with & intercepting http requests asserts page layout after intercepting the request",
+              "timedOut": null,
+              "duration": 2067,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var angularPage = new _angularPage[\"default\"]();\nvar endpoint = \"https://rahulshettyacademy.com/Library/GetBook.php?AuthorName=shetty\";\ncy.intercept({\n  method: \"GET\",\n  url: endpoint\n}, {\n  statusCode: 200,\n  body: [{\n    book_name: \"RestAssured with Java\",\n    isbn: \"RSU\",\n    aisle: \"2301\"\n  }]\n}).as(\"bookRequest\");\nangularPage.clickLibraryButton();\ncy.wait(\"@bookRequest\");\ncy.get(\"p\").should(\"have.text\", \"Oops only 1 Book available\");",
+              "err": {},
+              "uuid": "bee3cac8-4135-4e19-b9a3-7c4581675d03",
+              "parentUUID": "5a5afa5f-aefd-47ad-a4b0-f6e29eabc927",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "asserts table rows & request data",
+              "fullTitle": "working with & intercepting http requests asserts table rows & request data",
+              "timedOut": null,
+              "duration": 2959,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var angularPage = new _angularPage[\"default\"]();\nvar endpoint = \"https://rahulshettyacademy.com/Library/GetBook.php?AuthorName=shetty\";\ncy.intercept({\n  method: \"GET\",\n  url: endpoint\n}).as(\"bookRequest\");\nangularPage.clickLibraryButton();\ncy.wait(\"@bookRequest\").then(function (_ref) {\n  var request = _ref.request,\n      response = _ref.response;\n  cy.VerifyTableRowsForGivenDataLength(response.body.length);\n});",
+              "err": {},
+              "uuid": "508c1ba4-057e-456b-8b78-3891f2777e07",
+              "parentUUID": "5a5afa5f-aefd-47ad-a4b0-f6e29eabc927",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "asserts request status after changing initial request url",
+              "fullTitle": "working with & intercepting http requests asserts request status after changing initial request url",
+              "timedOut": null,
+              "duration": 660,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var angularPage = new _angularPage[\"default\"]();\nvar endpoint = \"https://rahulshettyacademy.com/Library/GetBook.php?AuthorName=shetty\";\nvar endpointChange = \"https://rahulshettyacademy.com/Library/GetBook.php?AuthorName=marko\";\ncy.intercept(\"GET\", endpoint, function (req) {\n  req.url = endpointChange;\n  req[\"continue\"](function (response) {\n    expect(response.statusCode).to.eq(404);\n  });\n}).as(\"bookRequest\");\nangularPage.clickLibraryButton();\ncy.wait(\"@bookRequest\");",
+              "err": {},
+              "uuid": "0f7ee967-7317-4860-b1cc-ef752ce6358b",
+              "parentUUID": "5a5afa5f-aefd-47ad-a4b0-f6e29eabc927",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "bee3cac8-4135-4e19-b9a3-7c4581675d03",
+            "508c1ba4-057e-456b-8b78-3891f2777e07",
+            "0f7ee967-7317-4860-b1cc-ef752ce6358b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5686,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.0.1"
+    }
+  }
+}
